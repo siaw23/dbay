@@ -28,6 +28,10 @@ defmodule Auction.FakeRepo do
   ]
 
   def all(Item), do: @items
+
+  def get!(Item, id) do
+    Enum.find(@items, fn(item) -> item.id === id end)
+  end
 end
 
 defmodule Auction do
