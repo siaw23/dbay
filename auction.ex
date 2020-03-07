@@ -1,6 +1,5 @@
 defmodule Auction.Item  do
   defstruct [:id, :title, :description, :ends_at]
-
 end
 
 defmodule Auction.FakeRepo do
@@ -9,20 +8,20 @@ defmodule Auction.FakeRepo do
   @items [
     %Item{
       id: 1,
-      title: "First Item",
-      description: "Nice description.",
+      title: "Oculus Quest",
+      description: "A VR headset from Facebook.",
       ends_at: ~N[2020-01-01 00:00:00]
     },
     %Item{
       id: 2,
-      title: "Second Item",
-      description: "Functional thoughts melt my brain.",
+      title: "Phoenix Web Framework",
+      description: "A nice web framework by Chris McCord.",
       ends_at: ~N[2020-01-01 00:00:00]
     },
     %Item{
       id: 3,
-      title: "Third Item",
-      description: "Buy three, get three for free.",
+      title: "Ghana",
+      description: "My beloved country.",
       ends_at: ~N[2020-01-01 00:00:00]
     }
   ]
