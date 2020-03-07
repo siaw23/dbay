@@ -1,4 +1,6 @@
 defmodule Auction.Item  do
-  defstruct [:id, :tile, :description, :ends_at]
+  defstruct [:id, :title, :description, :ends_at]
+
+
 
 end
