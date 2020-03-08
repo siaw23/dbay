@@ -15,5 +15,13 @@ defmodule Auction.Item  do
     |> validate_required(:title)
     |> validate_length(:title, min: 3)
     |> validate_length(:description, max: 100)
+    |> validate_change(:ends_at, &validate/2)
+  end
+
+  defp validate(:ends_at, ends_at_date) do
+    case DateTime.compare(ends_at_date, DateTime.utc_now()) do
+      :lt -> [ends_at: "ends_at cannot be in the past"]
+      _ -> []
+    end
   end
 end
