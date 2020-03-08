@@ -20,4 +20,8 @@ defmodule Auction do
       |> struct(attrs)
       |> @repo.insert()
   end
+
+  def delete_item(%Auction.Item{} = item) do
+    @repo.delete(item)
+  end
 end
