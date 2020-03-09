@@ -10,4 +10,9 @@ defmodule AuctionWeb.ItemController do
     item = Auction.get_item(id)
     render(conn, "show.html", item: item)
   end
+
+  def new(conn, _params) do
+    item = Auction.new_item()
+    render(conn, "new.html", item: item)
+  end
 end
