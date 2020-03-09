@@ -3,6 +3,10 @@ defmodule Auction do
 
   @repo Auction.Repo
 
+  def new_item do
+    Item.changeset(%Item{})
+  end
+
   def list_items do
     @repo.all(Item)
   end
