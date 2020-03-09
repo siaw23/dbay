@@ -20,8 +20,8 @@ defmodule Auction do
   end
 
   def insert_item(attrs) do
-    Auction.Item
-    |> struct(attrs)
+    %Item{}
+    |> Item.changeset(attrs)
     |> @repo.insert()
   end
 
