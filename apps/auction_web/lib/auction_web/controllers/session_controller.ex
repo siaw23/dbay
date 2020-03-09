@@ -1,0 +1,25 @@
+defmodule AuctionWeb.SessionController do
+  use AuctionWeb, :controller
+
+  def new(conn, _params) do
+    render(conn, "new.html")
+  end
+
+  def create(conn, %{"user" => %{"username" => username, "password" => password}}) do
+    case Auction.get_user_by_username_and_password(username, password) do
+      %Auction.User{} = user ->
+        conn
+        |> put_session(:user_id, user.id)
+        |> put_flash(:info, "Log in successful")
+        |> redirect(to: Routes.user_path(conn, :show, user))
+
+      _ ->
+        conn
+        |> put_flash(:error, "Password, username combination not found")
+        |> render("new.html")
+    end
+  end
+
+  def delete(conn, _params) do
+  end
+end
