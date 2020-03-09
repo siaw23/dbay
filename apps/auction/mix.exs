@@ -26,8 +26,10 @@ defmodule Auction.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ecto_sql, "~> 3.3.4"},
-      {:postgrex, "~> 0.15.3"}
+      {:ecto_sql, "~> 3.3"},
+      {:postgrex, "~> 0.15"},
+      {:comeonin, "~> 5.3"},
+      {:pbkdf2_elixir, "~> 1.2"}
     ]
   end
 end
