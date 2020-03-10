@@ -68,4 +68,6 @@ defmodule Auction do
     |> Bid.changeset(params)
     |> @repo.insert()
   end
+
+  def new_bid, do: Bid.changeset(%Bid{})
 end
