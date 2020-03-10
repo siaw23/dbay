@@ -15,7 +15,7 @@
   <p>
     <strong><%= bid.inserted_at %></strong>
     --
-    <%= bid.amount %>
+    <%= integer_to_currency(bid.amount) %>
     for
     <em><%= link bid.item.title, to: Routes.item_path(@conn, :show, bid.item)%></em>
   </p>
