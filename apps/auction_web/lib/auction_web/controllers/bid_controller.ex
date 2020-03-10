@@ -1,5 +1,5 @@
-defmacro AuctionWeb.BidController do
-  user AuctionWeb, :BidController
+defmodule AuctionWeb.BidController do
+  use AuctionWeb, :controller
   plug :require_logged_in_user
 
   def create(conn, %{"bid" => %{"amount" => amount}, "item_id" => item_id}) do
