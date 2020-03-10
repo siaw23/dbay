@@ -8,4 +8,9 @@ defmodule AuctionWeb.GlobalHelpers do
 
       "$" <> dollars_and_cents
   end
+
+  def formatted_datetime(datetime) do
+    datetime
+    |> Timex.format!("{YYYY}-{0M}-{0D} {h12}:{m}:{s}{am}")
+  end
 end
