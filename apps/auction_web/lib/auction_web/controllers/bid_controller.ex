@@ -3,7 +3,7 @@ defmodule AuctionWeb.BidController do
   plug :require_logged_in_user
 
   def create(conn, %{"bid" => %{"amount" => amount}, "item_id" => item_id}) do
-    user_id = conn.assigns.current_user.user_id
+    user_id = conn.assigns.current_user.id
 
     case Auction.insert_bid(%{amount: amount, item_id: item_id, user_id: user_id}) do
       {:ok, bid} -> redirect(conn, to: Routes.item_path(conn, :show, bid.item_id))
