@@ -13,7 +13,7 @@
 
 <%= for bid <- @bids do %>
   <p>
-    <strong><%= bid.inserted_at %></strong>
+    <strong><%= formatted_datetime(bid.inserted_at) %></strong>
     --
     <%= integer_to_currency(bid.amount) %>
     for
