@@ -64,6 +64,9 @@ if (match) {
 
   channel.on("new_bid", data => {
     console.log("new_bid msg received.", data)
+    const element = document.getElementById("bids")
+
+    element.insertAdjacentHTML("afterbegin", data.body)
   })
 
   channel.join()
