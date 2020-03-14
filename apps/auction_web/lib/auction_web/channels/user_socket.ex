@@ -2,7 +2,7 @@ defmodule AuctionWeb.UserSocket do
   use Phoenix.Socket
 
   ## Channels
-  # channel "room:*", AuctionWeb.RoomChannel
+  channel "item:*", AuctionWeb.ItemChannel
 
   # Socket params are passed from the client and can
   # be used to verify and authenticate a user. After
