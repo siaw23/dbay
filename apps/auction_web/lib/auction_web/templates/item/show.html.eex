@@ -9,9 +9,9 @@
   <div style="flex: 1;">
     <h2>Current Bids</h2>
 
-    <%= for bid <- @item.bids do %>
-      <p><%= integer_to_currency(bid.amount) %> <em>from <%= bid.user.username %></em></p>
-    <% end %>
+    <div id="bids">
+      <%= render_many @item.bids, AuctionWeb.BidView, "bid.html" %>
+    </div>
   </div>
 
 

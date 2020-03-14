@@ -62,6 +62,10 @@ if (match) {
   let itemId = match[1]
   let channel = socket.channel(`item:${itemId}`, {})
 
+  channel.on("new_bid", data => {
+    console.log("new_bid msg received.", data)
+  })
+
   channel.join()
     .receive("ok", resp => { console.log("Joined successfully", resp) })
     .receive("error", resp => { console.log("Unable to join", resp) })
