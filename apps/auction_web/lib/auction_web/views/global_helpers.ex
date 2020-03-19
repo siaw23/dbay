@@ -6,7 +6,7 @@ defmodule AuctionWeb.GlobalHelpers do
       |> Decimal.round(2)
       |> Decimal.to_string()
 
-      "$" <> dollars_and_cents
+    "$" <> dollars_and_cents
   end
 
   def formatted_datetime(datetime) do

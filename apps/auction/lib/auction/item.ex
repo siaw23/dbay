@@ -1,13 +1,13 @@
-defmodule Auction.Item  do
+defmodule Auction.Item do
   import Ecto.Changeset
   use Ecto.Schema
 
   schema "items" do
-    field :title, :string
-    field :description, :string
-    field :ends_at, :utc_datetime
+    field(:title, :string)
+    field(:description, :string)
+    field(:ends_at, :utc_datetime)
 
-    has_many :bids, Auction.Bid
+    has_many(:bids, Auction.Bid)
 
     timestamps()
   end

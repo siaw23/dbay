@@ -6,8 +6,7 @@ config :auction_web, AuctionWeb.Endpoint,
   http: [port: 4002],
   server: false
 
-
-  config :auction, Auction.Repo,
+config :auction, Auction.Repo,
   database: "auction_test",
   username: "postgres",
   password: "",

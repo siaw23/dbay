@@ -28,13 +28,13 @@ defmodule AuctionWeb.UserController do
       |> Map.get("id")
       |> String.to_integer()
 
-      if current_user == nil || current_user.id != requested_user_id do
-        conn
-        |> put_flash(:error, "Nice try. You're not supposed to be here.")
-        |> redirect(to: Routes.item_path(conn, :index))
-        |> halt()
-      else
-        conn
-      end
+    if current_user == nil || current_user.id != requested_user_id do
+      conn
+      |> put_flash(:error, "Nice try. You're not supposed to be here.")
+      |> redirect(to: Routes.item_path(conn, :index))
+      |> halt()
+    else
+      conn
+    end
   end
 end

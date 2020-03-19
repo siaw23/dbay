@@ -10,6 +10,3 @@ defmodule AuctionWeb.ItemChannel do
     {:noreply, socket}
   end
 end
-
-
-

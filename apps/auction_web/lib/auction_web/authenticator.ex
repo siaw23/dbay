@@ -11,6 +11,7 @@ defmodule AuctionWeb.Authenticator do
         nil -> nil
         id -> Auction.get_user(id)
       end
+
     assign(conn, :current_user, user)
   end
 end
