@@ -11,8 +11,13 @@ defmodule Auction.MixProject do
       lockfile: "../../mix.lock",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      aliases: aliases()
     ]
+  end
+
+  def aliases do
+    [test: ["ecto.create --quiet", "ecto.migrate", "test"]]
   end
 
   # Run "mix help compile.app" to learn about applications.
