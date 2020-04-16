@@ -7,8 +7,13 @@ defmodule AuctionUmbrella.MixProject do
       version: "0.1.0",
       start_permanent: Mix.env() == :prod,
       deps: deps()
+
     ]
   end
+
+  # def aliases do
+  #   [test: ["ecto.create --quiet", "ecto.migrate", "test"]]
+  # end
 
   # Dependencies listed here are available only for this
   # project and cannot be accessed from applications inside
