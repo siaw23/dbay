@@ -55,3 +55,10 @@ config :auction_web, AuctionWeb.Endpoint,
       ~r"lib/auction_web/templates/.*(eex)$"
     ]
   ]
+
+  config :auction, Auction.Repo,
+    database: "auction",
+    username: "postgres",
+    password: "",
+    hostname: "localhost",
+    port: "5432"

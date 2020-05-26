@@ -55,6 +55,9 @@ defmodule Auction do
     |> @repo.insert
   end
 
+  @doc """
+  Retrieves a User from the DB that matches the provided username & password
+  """
   def get_user_by_username_and_password(username, password) do
     with user when not is_nil(user) <- @repo.get_by(User, %{username: username}),
          true <- Password.verify_with_hash(password, user.hashed_password) do
